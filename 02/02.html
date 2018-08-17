@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页换扶</title>
+</head>
+<style>
+    *{ margin: 0; padding: 0; }
+    body {
+        background: yellow;
+    }
+    ul {
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+    }
+    #outer {
+        width:505px;
+        margin: 0px auto;
+    }
+    #skin {
+        margin: 10px auto;
+    }
+    #skin li {
+        width: 6px;
+        height:6px;
+        list-style: none;
+        float: left;
+        margin-right: 10px;
+    }
+    #skin li:nth-child(1) {
+        background: red;
+        border: 3px solid red;
+    }
+    #skin li:nth-child(2) {
+        background: green;
+        border: 3px solid green;
+    }
+    #skin li:nth-child(3) {
+        background: black;
+        border: 3px solid black;
+    }
+    #nav {
+        border-color:#fff;
+    }
+    #nav li {
+        list-style: none;
+        float: left;
+        width:82px;
+        line-height:25px;
+        text-align:center;
+        border:1px solid #fff;
+        color: #eee;
+    }
+</style>
+<link href="green.css" rel="stylesheet" type="text/css">
+<body>
+<div id="outer">
+    <ul id="skin">
+        <li title="红" id="red"></li>
+        <li title="绿" id="green"></li>
+        <li title="黑" id="black"></li>
+    </ul>
+    <ul id="nav">
+        <li><a>新闻</a></li>
+        <li><a>娱乐</a></li>
+        <li><a>体育</a></li>
+        <li><a>电影</a></li>
+        <li><a>旅游</a></li>
+        <li><a>音乐</a></li>
+    </ul>
+</div>
+<script>
+    const link = document.getElementsByTagName("link")[0];
+    const squ = document.getElementById("skin").getElementsByTagName("li");
+    //console.log(squ);
+
+    //forEach遍历数组 遍历对象 for in
+
+   for(var i = 0;i < squ.length;i++) {
+      squ[i].onclick = function () {
+          //alert(this.id);
+          for(var j in squ) {
+              squ[j].className = "";
+          }
+          this.className = "current";
+          link['href'] = this.id + ".css";
+      }  
+    }
+</script>
+
+</body>
+</html>

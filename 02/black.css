@@ -1,0 +1,11 @@
+body{
+    background: #555555;
+}
+#nav{
+    background:black;
+}
+#skin li.current {
+    border: 3px solid black;
+    padding: 0;
+    background: #eee;
+}
