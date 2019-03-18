@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select</title>
+</head>
+<body>
+<form name="a">
+    <select id="mySelect" name="a">
+        <option value="a">11</option>
+        <option value="b">22</option>
+        <option value="c">33</option>
+        <option value="d">44</option>
+    </select>
+    <input type="button" onclick="getText()" value="current-value">
+</form>
+</body>
+<script>
+    function getText() {
+        let obj = document.getElementById('mySelect')
+        var index = obj.selectedIndex
+        var text = obj.options[index].text
+        var value = obj.options[index].value
+        console.log(index, text, value)
+    }
+</script>
+</html>
