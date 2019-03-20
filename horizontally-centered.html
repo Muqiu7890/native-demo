@@ -42,6 +42,7 @@
 
     /*
      1.2.2 absolute+transform 子元素先相对父元素右移一半 在相对自己左移一半
+     (也可通过在子元素上设置margin： 0 auto;left: 0;right: 0;)
 
     .parent {
         position: relative;
@@ -55,12 +56,12 @@
 
     /*
      1.2.3 flex+justify-content  定义项目在主轴上的对其方式
-
     .parent {
         display: flex;
         justify-content: center;
     }
     */
+
 
     /*
      1.2.4 flex+margin
@@ -73,15 +74,127 @@
     }
     */
 
+
+
+
+    /* 2 多级块级元素--水平居中 */
+    /*
+      2.1 同1.2.3
+
+    .parent {
+        display: flex;
+        justify-content: center;
+        background: #A3C5A8;
+    }
+    .child {
+        background: antiquewhite;
+        width: 200px;
+        height: 200px;
+        margin: 5px;
+    }
+    */
+
+    /*
+      2.2 display: inline-block 相当于给行内元素居中
+
+    .parent {
+        text-align: center;
+        background: #A3C5A8;
+    }
+    .child {
+        display: inline-block;
+        background: antiquewhite;
+        width: 200px;
+        height: 200px;
+        margin: 5px;
+    }
+    */
+
+
+
+
+    /*3 浮动元素*/
+
+    /*3.1 定宽的浮动元素 水平居中
+    relative+负margin  用translateX(-50%)也可达到同样的效果
+
+    .child {
+        position: relative;
+        left: 50%;
+        margin-left: -250px;
+        background: #A3C5A8;
+    }
+    */
+
+    /*3.2 不定宽的浮动元素
+
+    .box{
+        float:left;
+        position:relative;
+        left:50%;
+    }
+    p{
+        float:left;
+        position:relative;
+        right:50%;
+    }
+    */
+
+    /*
+     3.3 无论是否定宽（最好的办法） flex
+     */
+
+    .parent {
+        display: flex;
+        justify-content: center;
+    }
+    .child {
+        float: left;
+    }
+
+
 </style>
 <body>
 <!--实现行内元素水平居中，可以通过在其父元素上设置text-align: center-->
 
 <!--块级元素 水平居中-->
+<!--
 <div class="parent">
     <div class="child">
         块级元素--水平居中
     </div>
 </div>
+-->
+
+<!--多级块级元素 水平居中-->
+<!--
+<div class="parent">
+    <div class="child">多级块级元素--水平居中</div>
+    <div class="child">多级块级元素--水平居中</div>
+    <div class="child">多级块级元素--水平居中</div>
+</div>
+-->
+
+<!--定宽的浮动元素 水平居中-->
+<!--
+<div class="parent">
+    <div class="child" style="float: left;width: 500px;">我是要居中的浮动元素</div>
+</div>
+-->
+
+<!--不定宽的浮动元素-->
+<!--
+<div class="box">
+    <p>我是浮动的</p>
+    <p>我也是居中的</p>
+</div>
+-->
+
+<!--浮动 无论宽度-->
+<div class="parent">
+    <div class="child">我是要居中的浮动元素</div>
+</div>
+
+
 </body>
 </html>
