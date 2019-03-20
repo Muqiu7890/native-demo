@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中</title>
+</head>
+<style>
+    /*块级元素 水平居中*/
+
+    /*
+     1.1 子元素定宽 margin：0 auto
+
+    .parent {
+        width: 100%;
+        height: 200px;
+        background: #A3C5A8;
+    }
+    .child {
+        width: 500px;
+        background: antiquewhite;
+        text-align: center;
+        margin: 0 auto;
+    }
+    */
+
+    /*
+     1.2 子元素不定宽
+
+     1.2.1 table+margin 子元素宽度即为内容宽
+
+    .parent {
+        width: 100%;
+        height: 200px;
+        background: #A3C5A8;
+    }
+    .child {
+        display: table;
+        margin: 0 auto;
+        background: antiquewhite;
+    }
+    */
+
+    /*
+     1.2.2 absolute+transform 子元素先相对父元素右移一半 在相对自己左移一半
+
+    .parent {
+        position: relative;
+    }
+    .child {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    */
+
+    /*
+     1.2.3 flex+justify-content  定义项目在主轴上的对其方式
+
+    .parent {
+        display: flex;
+        justify-content: center;
+    }
+    */
+
+    /*
+     1.2.4 flex+margin
+
+    .parent {
+        display: flex;
+    }
+    .child {
+        margin: 0 auto;
+    }
+    */
+
+</style>
+<body>
+<!--实现行内元素水平居中，可以通过在其父元素上设置text-align: center-->
+
+<!--块级元素 水平居中-->
+<div class="parent">
+    <div class="child">
+        块级元素--水平居中
+    </div>
+</div>
+</body>
+</html>
