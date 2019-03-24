@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平垂直居中</title>
+</head>
+<style>
+    /* 1 绝对定位+负margin  已知宽高  兼容所有浏览器
+    .container {
+        position: relative;
+        height: 500px;
+        background: #A3C5A8;
+    }
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -50px 0 0 -50px;
+    }
+    */
+
+    /*
+      2 absolute+margin: auto 已知宽高 不能兼容低版本的IE浏览器
+
+    .container {
+        position: relative;
+        height: 500px;
+        background: #A3C5A8;
+    }
+    .center {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    */
+
+    /*
+     3. absolute+transform 无需知元素宽高 需要考虑兼容性问题
+
+    .container {
+        position: relative;
+        height: 500px;
+        background: #A3C5A8;
+    }
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    */
+
+    /*
+     4 flex
+
+    .container {
+        display: flex;
+        height: 500px;
+        background: #A3C5A8;
+        justify-content: center;
+        align-items: center;
+    }
+    */
+
+    /*
+     5 flex+margin 不能兼容低版本的IE浏览器
+     */
+    .container {
+        display: flex;
+        height: 500px;
+        background: #A3C5A8;
+    }
+    .center {
+        margin: auto;
+    }
+
+
+</style>
+<body>
+<div class='container'>
+    <div class='center' style="width: 100px;height: 100px;background-color: #666">水平垂直居中</div>
+</div>
+</body>
+</html>
