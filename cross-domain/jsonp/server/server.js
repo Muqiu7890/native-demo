@@ -2,9 +2,9 @@ const express = require('express')
 
 const app = express()
 
-app.get('/',function (req,res) {
+app.get('/test',function (req,res) {
     const {params,callback} = req.query
-    res.end(`${callback}('cross domain success')`)
+    res.send(`${callback}('cross domain success')`)
 })
 
 app.listen(3000,function () {

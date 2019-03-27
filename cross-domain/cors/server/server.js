@@ -1,25 +1,36 @@
 const express = require('express')
+var bodyParser = require('body-parser')
 
-const app = express()
+const app = new express()
 
-app.use(function (req,res,next) {
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: false}))
+
+// parse application/json
+app.use(bodyParser.json())
+
+app.use(function (req, res, next) {
+    const {origin} = req.headers
     // 设置哪个源可以访问我
-    res.header('Assess-Control-Allow-Origin', 'http://localhost:63342')
+    res.header('Access-Control-Allow-Origin', origin)
     // 允许携带哪个头访问我
-    res.header('Assess-Control-Allow-Header', 'Content-Type')
+    res.header('Access-Control-Allow-Headers', 'Content-Type')
     // 允许哪个方法访问我
-    res.header('Assess-Control-Allow-Methods','GET,PUT,OPTIONS')
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,OPTIONS')
     // 允许携带cookie
-    res.header('Assess-Control-Allow-Credentials',true)
-    // 预检的存活时间
-    res.header('Assess-Control-Max-Age',6)
+    res.header('Access-Control-Allow-Credentials', true)
     if (req.method === 'OPTIONS') {
-        return next() // OPTIONS请求不做任何处理
+        res.send()
+    } else {
+        next()
     }
 })
 
+app.put('/test', function (req, res) {
+    console.log(req.body)
+    res.end('request success')
+})
 
-
-app.listen('3000',() => {
+app.listen(3000, () => {
     console.log('app running at port 3000...')
 })
