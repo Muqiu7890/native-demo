@@ -1,3 +1,4 @@
+// 双层循环 兼容性好
 function unique(array) {
     let res = []
     for(var i = 0; i < array.length; i++) {

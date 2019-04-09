@@ -1,3 +1,4 @@
+// 同unique 内层使用unique.js
 let arr = ['a', 'b', 'c', 1, 2, 1, 'a']
 
 function unique(array) {
