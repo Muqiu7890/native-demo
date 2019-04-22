@@ -1,0 +1,28 @@
+function _instanceof(left, right) { //left->person   right->Object
+    // 获得类型的原型
+    let prototype = right.prototype
+    // 获得对象的原型
+    left = left.__proto__
+    // 判断对象的类型是否等于类型的原型
+    while (true) {
+        if (left === null)
+            return false
+        if (prototype === left)
+            return true
+        left = left.__proto__
+    }
+}
+
+function Person(name,age) {
+    this.name = name
+    this.age = age
+}
+
+Person.prototype.sayName = function () {
+    console.log(this.name)
+}
+
+var person = new Person('qj',23)
+
+console.log(_instanceof(person,Person)) //true
+console.log(_instanceof(person,Object)) //true
