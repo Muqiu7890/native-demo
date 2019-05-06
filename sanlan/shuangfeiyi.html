@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双飞翼</title>
+</head>
+<style>
+    body, html {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    }
+
+    .parent {
+        min-width: 400px; /*确保中间内容可以显示出来，两倍left宽+right宽*/
+    }
+
+    .left {
+        float: left;
+        width: 200px;
+        height: 400px;
+        background: red;
+        margin-left: -100%;
+    }
+
+    .center {
+        float: left;
+        width: 100%;
+        height: 400px;
+        background: yellow;
+    }
+
+    .center div {
+        margin: 0 200px;
+    }
+
+    .right {
+        float: left;
+        width: 200px;
+        height: 400px;
+        background: blue;
+        margin-left: -200px;
+    }
+</style>
+<body>
+<div class="parent">
+    <div class="center">
+        <div>center</div>
+    </div>  <!--必须为第一个-->
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>

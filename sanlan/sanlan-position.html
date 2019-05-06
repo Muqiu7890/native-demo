@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏-绝对定位</title>
+</head>
+<style>
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    .left,.right {
+        position: absolute;
+        top: 0px;
+        background: red;
+        height: 200px;
+    }
+    .left {
+        left: 0px;
+        width: 200px;
+    }
+    .right {
+        right: 0px;
+        width: 200px;
+    }
+    .center {
+        margin: 0 220px 0 220px;
+        background: yellow;
+        height: 200px;
+        z-index: 999;
+    }
+    /*缺点: 如果中间栏含有最小宽度限制，或是含有宽度的内部元素，当浏览器宽度小到一定程度，会发生层重叠的情况。*/
+
+</style>
+<body>
+<div class="parent">
+    <div class="left"></div>
+    <div class="center"></div>
+    <div class="right"></div>
+</div>
+
+</body>
+</html>
