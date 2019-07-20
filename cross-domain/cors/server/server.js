@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 app.use(function (req, res, next) {
+    console.log(req.headers.origin);
     const {origin} = req.headers
     // 设置哪个源可以访问我
     res.header('Access-Control-Allow-Origin', origin)
@@ -20,7 +21,7 @@ app.use(function (req, res, next) {
     // 允许携带cookie
     res.header('Access-Control-Allow-Credentials', true)
     if (req.method === 'OPTIONS') {
-        res.send()
+        res.send('hh')
     } else {
         next()
     }
