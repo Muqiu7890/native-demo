@@ -16,7 +16,7 @@
             iframe.src = 'http://localhost:3000/c.html';
             first = false;
         }else{
-            // 第2次onload(同域b.html页)成功后，读取同域window.name中数据
+            // 第2次onload成功后，读取同域window.name中数据
             console.log(iframe.contentWindow.name);
         }
     }
