@@ -4,6 +4,7 @@ const app = express()
 
 app.get('/test',function (req,res) {
     const {callback} = req.query
+    console.log(callback)
     res.send(`${callback}('cross domain success')`)
 })
 
